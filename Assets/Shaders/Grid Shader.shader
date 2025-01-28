@@ -1,4 +1,4 @@
-﻿Shader "Ogxd/Grid"
+﻿Shader "Custom/OgxdGrid"
 {
    Properties
    {

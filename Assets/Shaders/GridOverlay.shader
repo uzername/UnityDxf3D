@@ -2,7 +2,7 @@
 // Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 // copied from https://gist.github.com/slipster216/3eec15c240066277e69e065a90e1f9fe and https://www.reddit.com/r/Unity3D/comments/4pqj52/best_way_to_draw_a_grid_in_unity/
 // should draw Grid over mesh
-Shader "Unlit/GridOverlay"
+Shader "Custom/GridOverlay"
 {
     Properties
 	{

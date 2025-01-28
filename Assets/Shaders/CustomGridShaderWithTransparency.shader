@@ -1,21 +1,25 @@
-Shader "Custom/CustomGridShader"
+Shader "Custom/GridShaderWithTransparency"
 {
-    // adviced by AI ChatGPT
+    // adviced by ChatGPT
     Properties
     {
         _GridColor ("Grid Color", Color) = (1, 1, 1, 1)
-        _BackgroundColor ("Background Color", Color) = (0, 0, 0, 1)
         _LineWidth ("Line Width", Float) = 1.0
         _GridScale ("Grid Scale", Float) = 10.0
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
+        Tags { "RenderType"="Transparent" "Queue"="Transparent" }
+        LOD 100
+
         Pass
         {
+            Blend SrcAlpha OneMinusSrcAlpha
+            ZWrite Off
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
+            #pragma target 3.0
 
             struct appdata
             {
@@ -31,7 +35,6 @@ Shader "Custom/CustomGridShader"
             float _GridScale;
             float _LineWidth;
             float4 _GridColor;
-            float4 _BackgroundColor;
 
             v2f vert (appdata v)
             {
@@ -48,8 +51,8 @@ Shader "Custom/CustomGridShader"
                 float lineIntensity = step(gridUV.x, _LineWidth / _GridScale) + step(gridUV.y, _LineWidth / _GridScale);
                 lineIntensity = saturate(lineIntensity);
 
-                // Mix colors based on line presence
-                return lerp(_BackgroundColor, _GridColor, lineIntensity);
+                // Output the grid color with transparency
+                return float4(_GridColor.rgb, lineIntensity); // Alpha matches the grid line intensity
             }
             ENDCG
         }

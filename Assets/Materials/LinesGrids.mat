@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: LinesGrids
-  m_Shader: {fileID: 4800000, guid: 5b0e754bcf34eec4693b2acb770d016c, type: 3}
+  m_Shader: {fileID: 4800000, guid: 4fcc98742cc3bac4dbfb4c7e865c92c0, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -16,7 +16,7 @@ Material:
   - _UVMODE_WORLDY
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
+  m_DoubleSidedGI: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses:
@@ -52,6 +52,10 @@ Material:
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 5, y: 5}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -101,21 +105,25 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _GraduationScale: 1
     - _GridScale: 1
-    - _LineWidth: 0.02
-    - _LineWidthX: 0.01
-    - _LineWidthY: 0.01
+    - _LineWidth: 1
+    - _LineWidthX: 0.025
+    - _LineWidthY: 0.025
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _Scale: 1
+    - _SecondaryFadeInSpeed: 0.5
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
+    - _Thickness: 0.00424
     - _UVMode: 2
     - _WorkflowMode: 1
     - _ZWrite: 1
@@ -125,7 +133,8 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GridColor: {r: 1, g: 1, b: 1, a: 1}
-    - _LineColor: {r: 1, g: 1, b: 1, a: 1}
+    - _LineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _SecondaryColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
