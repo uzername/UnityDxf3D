@@ -1,8 +1,10 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 /// <summary>
 /// https://www.youtube.com/watch?v=PM8BZK3ig2s - how to orbit
 /// https://www.youtube.com/watch?v=qEpmOqLHWcA - how to pan and zoom
+/// https://assetstore.unity.com/packages/tools/camera/camera-orbit-44146 - paid alternative
 /// </summary>
 public class CameraController : MonoBehaviour
 {
@@ -30,7 +32,24 @@ public class CameraController : MonoBehaviour
         {
             Pan();
         }
+        Zoom(Input.GetAxis("Mouse ScrollWheel"));
     }
+
+    private void Zoom(float zoomDiff)
+    {
+        bool moveCameraHolderInsteadOfCamera = false;
+        if (zoomDiff!=0)  {
+            Debug.Log(zoomDiff);
+            Transform t = Camera.main.transform; 
+            Vector3 look = t.TransformDirection(Vector3.forward);
+            if (moveCameraHolderInsteadOfCamera)  {
+                transform.position += look.normalized * zoomScale * zoomDiff;
+            } else  {
+                Camera.main.transform.position += look.normalized * zoomScale * zoomDiff;
+            }
+        }
+    }
+
     private void Pan()
     {
         if ((Input.GetAxis("Mouse Y")!=0) || (Input.GetAxis("Mouse X") != 0))

@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: LinesGrids
-  m_Shader: {fileID: 4800000, guid: 4fcc98742cc3bac4dbfb4c7e865c92c0, type: 3}
+  m_Shader: {fileID: 4800000, guid: 69a63db4382b9a94c946db91e6ace0eb, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -88,6 +88,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AddPrecomputedVelocity: 0
+    - _Alpha: 1
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Blend: 0
@@ -106,10 +107,13 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _GraduationScale: 1
+    - _Grid2Size: 160
+    - _Grid3Size: 320
     - _GridScale: 1
+    - _GridSize: 10
     - _LineWidth: 1
-    - _LineWidthX: 0.025
-    - _LineWidthY: 0.025
+    - _LineWidthX: 0.31
+    - _LineWidthY: 0.53
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
